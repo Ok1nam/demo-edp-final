@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Écoles de Production - Soutenance</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; }
+    header {
+      background: linear-gradient(135deg, #2a3b4c, #4b6a88);
+      padding: 1rem 2rem;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+    }
+    .logo { max-width: 70%; font-size: 1rem; line-height: 1.4; }
+    .burger {
+      width: 30px; height: 20px; display: flex; flex-direction: column;
+      justify-content: space-between; cursor: pointer;
+    }
+    .burger div { height: 3px; background: #fff; border-radius: 2px; }
+    nav {
+      position: fixed; top: 0; right: -100%; width: 40%; height: 100%;
+      background: #333; transition: right 0.3s; padding-top: 4rem; z-index: 100;
+    }
+    nav.active { right: 0; }
+    nav ul { list-style: none; }
+    nav ul li { border-bottom: 1px solid #444; }
+    nav ul li a {
+      display: block; padding: 1rem; color: #fff;
+      text-decoration: none; font-size: 1.1rem;
+    }
+    main { padding: 2rem; max-width: 900px; margin: 30px auto 0 auto; }
+    h1 { margin-bottom: 1rem; font-size: 1.8rem; }
+    .tools-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #fff; padding: 20px; border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      cursor: pointer; transition: transform 0.2s;
+    }
+    .card:hover { transform: scale(1.02); }
+    .questionnaire { margin-top: 1rem; }
+    .question-box {
+      margin-top: 1rem; background: #fff; padding: 1rem;
+      border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .btn {
+      padding: 10px 20px; margin: 10px 5px; border: none;
+      border-radius: 8px; cursor: pointer; font-size: 1rem;
+    }
+    .btn-start { background: #2196F3; color: #fff; }
+    .btn-nav {
+      background: #f4f4f4; border: 1px solid #ccc;
+    }
+    .advice {
+      margin-top: 10px; padding: 10px; background: #fff3cd;
+      border-left: 6px solid #ffc107; border-radius: 6px;
+    }
+    .selected { background: #d0e8ff !important; font-weight: bold; }
+    .volet-title {
+      font-weight: bold; margin-top: 2rem; color: #444;
+    }
+    .hero {
+      min-height: 120px; background: linear-gradient(90deg, #314866 0%, #789fd9 100%);
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 12px; margin-bottom: 1.5rem; color: #fff;
+      font-size: 1.5rem; font-weight: bold; text-align: center;
+      box-shadow: 0 2px 8px rgba(50,80,140,0.04);
+    }
+    footer {
+      background: #222f3e; color: #fff; padding: 1.5rem 0 1rem 0;
+      text-align: center; margin-top: 3rem; font-size: 1rem;
+    }
+    footer nav ul {
+      display: flex; justify-content: center; gap: 2.5rem;
+      margin: 0; padding: 0; list-style: none;
+    }
+    footer nav ul li a {
+      color: #bcd6f6; text-decoration: none; font-size: 1.05rem;
+      transition: color 0.2s;
+    }
+    footer nav ul li a:hover { color: #fff; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Proposition d’une démarche méthodologique d’accompagnement par l’expert-comptable dans la création et le pilotage d’une école de production</div>
+    <div class="burger" id="burger"><div></div><div></div><div></div></div>
+  </header>
+  <nav id="menu">
+    <ul>
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#outils">Outils</a></li>
+      <li><a href="#methodo">Méthodologie</a></li>
+      <li><a href="#annexes">Annexes</a></li>
+      <li><a href="#apropos">Contact</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="accueil">
+      <div class="hero">
+        Proposition d’une démarche méthodologique d’accompagnement par l’expert-comptable dans la création et le pilotage d’une école de production
+      </div>
+      <h1>Accueil</h1>
+      <p>Bienvenue sur le site de présentation du mémoire relatif à l’accompagnement à la création d’une École de Production par un expert-comptable.</p>
+      <p>Ce site constitue un support à la rédaction du mémoire dans le cadre de l'obtention du Diplôme d’Expertise Comptable (DEC).</p>
+      <p>Vous y trouverez différents outils, ressources et illustrations conçus pour faciliter l'accompagnement des porteurs de projet dans la création et le pilotage d'une école de production.</p>
+      <p><strong>Problématique :</strong> « Comment l’expert-comptable peut-il accompagner au mieux un porteur de projet dans la création d’une école de production ainsi que dans son suivi financier et extra-financier ? »</p>
+    </section>
+    <section id="outils" style="display:none;">
+      <h1>Outils</h1>
+      <div class="tools-grid">
+        <div class="card" id="arbre-card"><h2>🧩 Arbre à la décision</h2><p>Testez votre préparation en 20 questions.</p></div>
+        <div class="card" onclick="window.open('https://www.ecoles-de-production.com/le-reseau-des-ecoles/','_blank')"><h2>🗺️ Cartographie</h2><p>Répartition des écoles.</p></div>
+      </div>
+    </section>
+    <section id="arbre" style="display:none;">
+      <h1>Arbre à la décision</h1>
+      <p>20 questions pour évaluer votre projet.</p>
+      <div id="progress-bar" style="margin-top:1rem; font-weight:bold;"></div>
+      <button class="btn btn-start" id="start-questionnaire">Lancer le questionnaire</button>
+      <div id="questionnaire" class="questionnaire"></div>
+      <div class="final-options" style="display:none;">
+        <button class="btn btn-nav" id="quit-questionnaire">Quitter</button>
+        <button class="btn btn-nav" id="restart-questionnaire">Recommencer</button>
+        <button class="btn btn-nav" onclick="window.print()">Exporter</button>
+      </div>
+    </section>
+    <!-- Méthodologie, Annexes, Apropos (inchangés pour cet extrait) -->
+  </main>
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="#accueil" onclick="navigate('accueil')">Accueil</a></li>
+        <li><a href="#outils" onclick="navigate('outils')">Outils</a></li>
+        <li><a href="#methodo" onclick="navigate('methodo')">Méthodologie</a></li>
+        <li><a href="#annexes" onclick="navigate('annexes')">Annexes</a></li>
+        <li><a href="#apropos" onclick="navigate('apropos')">Contact</a></li>
+      </ul>
+    </nav>
+    <div style="margin-top:1rem; font-size:0.9em; color:#8fa3c8;">© 2024 Laura Gombaud – Soutenance DEC</div>
+  </footer>
+  <script>
+    function navigate(target) {
+      document.querySelectorAll('main section').forEach(s => s.style.display = 'none');
+      const sec = document.getElementById(target);
+      if (sec) sec.style.display = 'block';
+      document.getElementById('menu').classList.remove('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const burger = document.getElementById('burger');
+      const menu = document.getElementById('menu');
+      burger.addEventListener('click', () => menu.classList.toggle('active'));
+
+      document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          navigate(link.getAttribute('href').slice(1));
+        });
+      });
+
+      const arbreCard = document.getElementById('arbre-card');
+      const outSection = document.getElementById('outils');
+      const arSection = document.getElementById('arbre');
+      arbreCard.addEventListener('click', () => {
+        outSection.style.display = 'none';
+        arSection.style.display = 'block';
+      });
+
+      const startBtn = document.getElementById('start-questionnaire');
+      startBtn.addEventListener('click', () => {
+        outSection.style.display = 'none';
+        arSection.style.display = 'block';
+        index = 0;
+        document.getElementById('questionnaire').innerHTML = '';
+        document.querySelector('.final-options').style.display = 'none';
+        addQuestion();
+      });
+
+      document.getElementById('quit-questionnaire').addEventListener('click', () => {
+        arSection.style.display = 'none';
+        outSection.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      document.getElementById('restart-questionnaire').addEventListener('click', () => startBtn.click());
+    });
+
+    const steps = [ /* identique à ton tableau de 20 questions */ ];
+    let index = 0;
+    const responses = [];
+
+    function updateProgress() {
+      const bar = document.getElementById('progress-bar');
+      if (bar) bar.textContent = `Question ${index + 1} sur ${steps.length}`;
+    }
+
+    function addQuestion() {
+      const container = document.getElementById('questionnaire');
+      if (!container) return;
+
+      updateProgress();
+      if (index === steps.length) {
+        document.querySelector('.final-options').style.display = 'block';
+        document.getElementById('progress-bar').textContent = 'Questionnaire terminé ✅';
+        return;
+      }
+
+      if (index === 0) container.innerHTML = `<h2 class='volet-title'>&#x1F9E0; Volet 1 – Capacités personnelles du porteur de projet</h2>`;
+      else if (index === 10) container.innerHTML += `<h2 class='volet-title'>&#x1F6E0; Volet 2 – Maturité du projet d’École de Production</h2>`;
+
+      const box = document.createElement('div');
+      box.className = 'question-box';
+      const q = document.createElement('p');
+      q.textContent = `${index + 1}. ${steps[index].question}`;
+
+      const btnYes = document.createElement('button');
+      btnYes.className = 'btn btn-nav';
+      btnYes.textContent = 'OUI';
+      btnYes.setAttribute('aria-label', 'Répondre Oui à la question');
+      btnYes.setAttribute('role', 'button');
+
+      const btnNo = document.createElement('button');
+      btnNo.className = 'btn btn-nav';
+      btnNo.textContent = 'NON';
+      btnNo.setAttribute('aria-label', 'Répondre Non à la question');
+      btnNo.setAttribute('role', 'button');
+
+      const btnBack = document.createElement('button');
+      btnBack.className = 'btn btn-nav';
+      btnBack.textContent = '⬅️ Précédent';
+      btnBack.setAttribute('aria-label', 'Retour à la question précédente');
+      btnBack.setAttribute('role', 'button');
+      if (index === 0) btnBack.disabled = true;
+
+      const advice = document.createElement('div');
+      advice.className = 'advice';
+      advice.style.display = 'none';
+
+      btnYes.onclick = () => { responses[index] = 'OUI'; index++; addQuestion(); };
+      btnNo.onclick = () => {
+        responses[index] = 'NON';
+        btnNo.classList.add('selected');
+        advice.textContent = `Conseil : ${steps[index].advice}`;
+        advice.style.display = 'block';
+        setTimeout(() => { index++; addQuestion(); }, 1500);
+      };
+      btnBack.onclick = () => { if (index > 0) { index--; addQuestion(); } };
+
+      box.appendChild(q);
+      box.appendChild(btnYes);
+      box.appendChild(btnNo);
+      box.appendChild(btnBack);
+      box.appendChild(advice);
+      container.appendChild(box);
+      box.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    const steps = [
+      { question: "Ai-je une motivation forte et pérenne pour porter ce projet dans la durée ?", advice: "Réinterroger ses motivations" },
+      { question: "Est-ce que j’adhère pleinement aux valeurs du modèle EDP ?", advice: "Acquérir de l’expérience ou se former" },
+      { question: "Ai-je des compétences ou une expérience dans les domaines clés ?", advice: "Se doter d’un collègue ou équipier en renfort" },
+      { question: "Suis-je prêt à gérer les difficultés du quotidien avec résilience ?", advice: "Travailler sa résilience" },
+      { question: "Ai-je une capacité à fédérer autour d’un projet ?", advice: "Construire une équipe complémentaire" },
+      { question: "Ai-je une posture humaine adaptée à des jeunes en fragilité ?", advice: "Développer sa posture éducative" },
+      { question: "Suis-je disponible concrètement ?", advice: "Revoir sa disponibilité personnelle" },
+      { question: "Ai-je formalisé une association ou structure juridique ?", advice: "Sécuriser le cadre juridique" },
+      { question: "Ai-je identifié un ou plusieurs maîtres professionnels potentiels ?", advice: "Chercher des référents métiers" },
+      { question: "Ai-je défini un modèle économique soutenable ?", advice: "Affiner le plan de financement initial" },
+      { question: "Ai-je identifié un besoin de formation local ?", advice: "Revoir les données socio-économiques du territoire" },
+      { question: "Ai-je choisi une filière technique adaptée ?", advice: "Rechercher une filière mieux adaptée" },
+      { question: "Ai-je un lien avec des entreprises locales ?", advice: "Renforcer mon réseau économique local" },
+      { question: "Le territoire est-il favorable au projet ?", advice: "Mener une étude d’opportunité sur le territoire" },
+      { question: "Ai-je identifié des maîtres-professionnels expérimentés ?", advice: "Chercher des référents métiers avec expérience pédagogique" },
+      { question: "Ai-je défini un modèle économique pour les 3 premières années ?", advice: "Affiner le plan de financement initial" },
+      { question: "Le projet respecte-t-il la pédagogie EDP ?", advice: "Revoir l’organisation pédagogique envisagée" },
+      { question: "Ai-je formalisé une structure juridique ?", advice: "Créer une structure porteuse (association loi 1901, etc.)" },
+      { question: "Le projet est-il aligné avec les critères FNEP ?", advice: "Se rapprocher de la FNEP pour un appui structurant" },
+      { question: "Ai-je prévu une stratégie de communication ?", advice: "Élaborer une stratégie de communication ciblée" }
+    ];
+  </script>
+</body>
+</html>

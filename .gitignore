@@ -1,0 +1,10 @@
+# Gitignore standard pour Node.js et Vite
+node_modules/
+client/node_modules/
+.DS_Store
+dist/
+client/dist/
+.env
+.npm
+npm-debug.log*
+.vscode/ # Si vous voulez ignorer les fichiers de configuration VS Code spécifiques à votre machine
