@@ -7,7 +7,7 @@
     "build": "vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist --message 'Initial branch setup'"  
+    "deploy": "gh-pages -d dist -e public"  
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
